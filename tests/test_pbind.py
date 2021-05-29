@@ -1,6 +1,6 @@
 import pytest
-from mimikit.pbind.patterns import *
-from mimikit.pbind import Pbind, Pmin, Pmax
+from pbind.patterns import *
+from pbind.pbind import Pbind, Pmin, Pmax
 import numpy as np
 
 
