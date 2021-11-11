@@ -491,7 +491,7 @@ class SCRoutine:
             pat = Pconst(pat)
         self.stack = []
         self.time = 0.0
-        rout = _rout.get()
+        rout = _rout.get(None)
         if rout:
             self.ctx = rout.ctx
             self.gen = pat.embedInStream(rout)
@@ -531,7 +531,7 @@ class SCRoutine:
         return self.next(self.override_inval)
 
     def next(self, val=None):
-        rout = _rout.get()
+        rout = _rout.get(None)
         if not rout:
             self.inval = val
             res = self.ctx.run(next, self.gen)
