@@ -25,8 +25,8 @@ class Event(dict):
         return res if res is not None else dict.get(self.parent, key)
 
     def get(self, key, default=None):
-        res = dict.get(self, key)
-        return res if res is not None else dict.get(self.parent, key)
+        res = super().get(key, default)
+        return res if res is not None else self.parent.get(key, default)
 
     def value(self, key):
         res = self.get(key)
